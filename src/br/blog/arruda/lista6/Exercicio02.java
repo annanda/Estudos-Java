@@ -23,7 +23,6 @@ public class Exercicio02 {
             }
             out.close();
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }
