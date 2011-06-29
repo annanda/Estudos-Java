@@ -6,37 +6,49 @@ package br.blog.arruda.p2A.ex2;
 
 import br.blog.arruda.p2A.ex1.*;
 import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
  * @author arruda
  */
 public class Exercicio02 {
- 
-    public static void main(String args[]){       
-        
-        //XML
-        XMLDecoder xmlD =null;
+
+    public static void main(String args[]) {
+
+//        //XML
+        XMLDecoder xmlD = null;
         try {
             xmlD = new XMLDecoder(new FileInputStream("empregrados.xml"));
         } catch (FileNotFoundException ex) {
         }
-        
+
         ArrayList<Empregado> listaEmpsXml = new ArrayList<Empregado>();
-        
-        listaEmpsXml = (ArrayList<Empregado> ) xmlD.readObject();        
+
+        listaEmpsXml = (ArrayList<Empregado>) xmlD.readObject();
         xmlD.close();
+
+        Map<String, Empregado> hashEmps = new TreeMap<String, Empregado> ();
+
+        for (Empregado emp : listaEmpsXml) {
+            hashEmps.put(emp.getCodigo(), emp);
+        }
+        Iterator i = hashEmps.keySet().iterator();
+        while (i.hasNext()) {
+            String codigo = (String) i.next();
+            Empregado ee = (Empregado) hashEmps.get(codigo);
+            System.out.println(codigo + ":" + ee.getNome());
+        }
+
+//        System.out.println(hashEmps.get("digdin").getNome());
+
 //        
 //        Map<String, Double> mapEmpsXml = new Map<String, Double>();
 //        
@@ -53,6 +65,6 @@ public class Exercicio02 {
 //        } catch (FileNotFoundException ex) {
 //        } catch (IOException ex) {
 //        }
-        
+
     }
 }

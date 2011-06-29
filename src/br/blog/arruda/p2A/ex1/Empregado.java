@@ -8,7 +8,7 @@ package br.blog.arruda.p2A.ex1;
  *
  * @author arruda
  */
-public class Empregado {
+public class Empregado implements Comparable<Empregado> {
     private String nome;
     private String codigo;
     private double salario;
@@ -45,7 +45,11 @@ public class Empregado {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-    
+
+    @Override
+    public int compareTo(Empregado t) {
+        return this.nome.compareTo(t.getNome());
+    }
     
             
 }
