@@ -1,0 +1,6 @@
+2 + 3
+
+new Ola()
+
+Ola.soma(2,3)
+
