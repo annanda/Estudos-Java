@@ -2,5 +2,36 @@
 
 new Ola()
 
+//tem que usar o nome completo para usar soma de Ola
 Ola.soma(2,3)
+new Ola[] {new Ola(), new Ola()}
+
+//ao colocar ";" deixa de ser um trecho a ser inspecionado para ser um comando
+System.out.println(Ola.soma(2,3));
+
+
+//observar como é inspecionar muitas linhas ao mesmo tempo
+String a = "olá";
+String b = " mundo";
+String c = a + b;return c;
+
+/* aqui não posso definir nada novo, mas qualquer código que rode, posso colocar aqui */
+
+
+new Carro("fiesta", 1478.9, 13.2, true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
