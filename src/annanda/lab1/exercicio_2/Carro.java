@@ -26,6 +26,11 @@ public class Carro {
 		return false;
 	}
 	
-	
+	public boolean feitoAntes(int ano){
+		if(this.ano < ano){
+			return true;
+		}
+		return false;
+	}
 
 }
