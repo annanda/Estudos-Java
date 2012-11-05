@@ -1,3 +1,4 @@
+package annanda.lab1;
 
 public class Dono {
 	public String nome;
