@@ -1,4 +1,4 @@
-package exercicio_2;
+package annanda.lab1;
 
 public class Imovel {
 	public double metragem;

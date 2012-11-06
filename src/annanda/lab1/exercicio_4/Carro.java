@@ -1,4 +1,4 @@
-package exercicio_4;
+package annanda.lab1.exercicio_4;
 
 public class Carro {
 	public int retanguloAltura;
