@@ -1,4 +1,4 @@
-package annanda.lab1.exercicio_1;
+package annanda.lab1;
 
 public class Ola {		
 	
