@@ -33,6 +33,9 @@ public class Carro {
 		return false;
 	}
 	
+	public boolean maisVelho(Carro outro) {
+		return this.feitoAntes(outro.ano);
+	}
 	
 
 }
