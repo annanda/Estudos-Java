@@ -35,5 +35,8 @@ public class Carro {
 		return this.feitoAntes(outro.ano);
 	}
 	
+	public boolean mesmoDono(Carro outro){
+		 return this.dono.igual(outro.dono); 
+	}
 
 }
