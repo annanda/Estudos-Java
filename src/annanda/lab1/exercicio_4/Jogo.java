@@ -31,6 +31,7 @@ public class Jogo {
 			this.carros[i].retanguloAltura = ALTURA_DOS_CARROS;
 			this.carros[i].retanguloLargura = 100;
 			this.carros[i].velocidade = 160;
+			this.carros[i].direcao = 0;
 		}
 
 		this.carros[2].xPosicao = 300;
@@ -38,6 +39,7 @@ public class Jogo {
 		this.carros[2].retanguloAltura = ALTURA_DOS_CARROS;
 		this.carros[2].retanguloLargura = 150;
 		this.carros[2].velocidade = 400;
+		this.carros[2].direcao = 1;
 		
 		for(int i = 3; i < 6; i++){
 			this.carros[i].xPosicao = 200 * (i-1);
@@ -52,7 +54,8 @@ public class Jogo {
 			this.carros[i].yPosicao = POSICAO_INICIAL_DA_RUA + ((INTERVALO_ENTRE_CARROS + ALTURA_DOS_CARROS) * 3) ;
 			this.carros[i].retanguloAltura = ALTURA_DOS_CARROS;
 			this.carros[i].retanguloLargura = 60;
-			this.carros[i].velocidade = 134;			
+			this.carros[i].velocidade = 134;	
+			this.carros[i].direcao = 1;
 		}
 
 	}

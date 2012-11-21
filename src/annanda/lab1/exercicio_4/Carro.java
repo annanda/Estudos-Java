@@ -37,8 +37,8 @@ public class Carro {
 		}
 		if(this.direcao == 1){
 			this.xPosicao = this.xPosicao - (this.velocidade * dt);
-			if(this.xPosicao < 0){
-				this.xPosicao += 800 - this.retanguloLargura;			
+			if(this.xPosicao < 0 - this.retanguloLargura ){
+				this.xPosicao += 800 + this.retanguloLargura;			
 			}
 		}		
 	}	
