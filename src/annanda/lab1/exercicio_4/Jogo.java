@@ -22,6 +22,7 @@ public class Jogo {
 		this.carros[0].yPosicao = ALTURA_DOS_CARROS + 30;
 		this.carros[0].retanguloAltura = ALTURA_DOS_CARROS;
 		this.carros[0].retanguloLargura = 100;
+		this.carros[0].velocidade = 160;
 	}
 	
 	public void desenhar(Tela tela) {
@@ -33,6 +34,7 @@ public class Jogo {
 	}
 	
 	public void tique(HashSet<String> teclas, double dt) {
+		this.carros[0].mover(dt);
 	}
 	
 	public void tecla(String tecla) {
