@@ -40,7 +40,6 @@ public class Carro {
 			if(this.xPosicao < 0){
 				this.xPosicao += 800 - this.retanguloLargura;			
 			}
-		}
-		
+		}		
 	}	
 }
