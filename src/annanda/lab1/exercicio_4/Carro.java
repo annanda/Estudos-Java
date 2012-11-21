@@ -17,6 +17,15 @@ public class Carro {
 		this.yPosicao = yPosicao;		
 	}
 	
+	public Carro(){
+		
+	}
+	
+	public void desenhar(Tela tela) {
+		Cor cor = new Cor("azul");
+		tela.retangulo(this.xPosicao, this.yPosicao, this.retanguloLargura, this.retanguloAltura, cor);
+	}
+	
 	public void mover(double dt){
 		if(this.direcao == 0){
 			this.xPosicao = this.xPosicao + (int)(this.velocidade * dt);
