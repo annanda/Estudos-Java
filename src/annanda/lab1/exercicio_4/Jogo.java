@@ -18,6 +18,8 @@ public class Jogo {
 	public Jogo() {	
 		this.carros = new Carro[9];
 		
+		this.sapo = new Sapo(30.0, 7, 400, POSICAO_FINAL_DA_RUA + 30);
+		
 		for(int i = 0; i < carros.length; i++){
 			carros[i] = new Carro();
 		}
@@ -60,10 +62,13 @@ public class Jogo {
 		tela.retangulo(0, 30, 800, 75, corBranca);
 		tela.retangulo(0, POSICAO_FINAL_DA_RUA, 800, 75, corBranca);
 		
+		this.sapo.desenhar(tela);
+		
 		for(Carro carro : this.carros){
 			carro.desenhar(tela);
 		}
 		
+		tela.texto("Vidas: " + this.sapo.vidas, 620, POSICAO_FINAL_DA_RUA + ALTURA_DOS_CARROS + 40, 40, corBranca);
 	}
 	
 	public void tique(HashSet<String> teclas, double dt) {

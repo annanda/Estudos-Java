@@ -12,4 +12,13 @@ public class Sapo {
 		this.xPosicao = xPosicao;
 		this.yPosicao = yPosicao;		
 	}
+	
+	public Sapo(){
+		
+	}
+	
+	public void desenhar(Tela tela) {
+		Cor cor = new Cor("verde");
+		tela.circulo(this.xPosicao, this.yPosicao, 30, cor);
+	}
 }
