@@ -5,10 +5,10 @@ public class Carro {
 	public int retanguloLargura;
 	public double velocidade;
 	public int direcao; // 1 representa esquerda; 0 representa direita
-	public int xPosicao;
-	public int yPosicao;
+	public double xPosicao;
+	public double yPosicao;
 	
-	public Carro(int retanguloAltura, int retanguloLargura, double velocidade, int direcao, int xPosicao, int yPosicao){
+	public Carro(int retanguloAltura, int retanguloLargura, double velocidade, int direcao, double xPosicao, double yPosicao){
 		this.retanguloAltura = retanguloAltura;
 		this.retanguloLargura = retanguloLargura;
 		this.velocidade = velocidade;
@@ -28,17 +28,19 @@ public class Carro {
 	
 	public void mover(double dt){
 		if(this.direcao == 0){
-			this.xPosicao = this.xPosicao + (int)(this.velocidade * dt);
+			this.xPosicao = this.xPosicao + (this.velocidade * dt);
+			if(this.xPosicao > 800){
+
+				this.xPosicao -=  800 + this.retanguloLargura;
+
+			}
 		}
 		if(this.direcao == 1){
-			this.yPosicao = this.xPosicao - (int)(this.velocidade * dt);
+			this.xPosicao = this.xPosicao - (this.velocidade * dt);
+			if(this.xPosicao < 0){
+				this.xPosicao += 800 - this.retanguloLargura;			
+			}
 		}
 		
-		if(this.xPosicao > 800){
-			this.xPosicao -=  800;
-		}
-		if(this.xPosicao < 0){
-			this.xPosicao += 800;			
-		}
 	}	
 }
