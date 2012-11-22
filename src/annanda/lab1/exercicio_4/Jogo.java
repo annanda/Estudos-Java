@@ -32,6 +32,10 @@ public class Jogo {
 			this.carros[i].retanguloLargura = 100;
 			this.carros[i].velocidade = 160;
 			this.carros[i].direcao = 0;
+			this.carros[i].cor = new Cor(
+					(int)(Math.random() * 255),
+                    (int)(Math.random() * 255),
+                    (int)(Math.random() * 255));
 		}
 
 		this.carros[2].xPosicao = 300;
@@ -40,6 +44,10 @@ public class Jogo {
 		this.carros[2].retanguloLargura = 150;
 		this.carros[2].velocidade = 400;
 		this.carros[2].direcao = 1;
+		this.carros[2].cor = new Cor(
+				(int)(Math.random() * 255),
+                (int)(Math.random() * 255),
+                (int)(Math.random() * 255));
 		
 		for(int i = 3; i < 6; i++){
 			this.carros[i].xPosicao = 200 * (i-1);
@@ -47,6 +55,10 @@ public class Jogo {
 			this.carros[i].retanguloAltura = ALTURA_DOS_CARROS;
 			this.carros[i].retanguloLargura = 60;
 			this.carros[i].velocidade = 100;
+			this.carros[i].cor = new Cor(
+					(int)(Math.random() * 255),
+                    (int)(Math.random() * 255),
+                    (int)(Math.random() * 255));
 		}
 		
 		for(int i = 6; i < 9; i++){
@@ -56,6 +68,10 @@ public class Jogo {
 			this.carros[i].retanguloLargura = 60;
 			this.carros[i].velocidade = 134;	
 			this.carros[i].direcao = 1;
+			this.carros[i].cor = new Cor(
+					(int)(Math.random() * 255),
+                    (int)(Math.random() * 255),
+                    (int)(Math.random() * 255));
 		}
 
 	}

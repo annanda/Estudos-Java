@@ -7,14 +7,16 @@ public class Carro {
 	public int direcao; // 1 representa esquerda; 0 representa direita
 	public double xPosicao;
 	public double yPosicao;
+	public Cor cor;
 	
-	public Carro(int retanguloAltura, int retanguloLargura, double velocidade, int direcao, double xPosicao, double yPosicao){
+	public Carro(int retanguloAltura, int retanguloLargura, double velocidade, int direcao, double xPosicao, double yPosicao, Cor cor){
 		this.retanguloAltura = retanguloAltura;
 		this.retanguloLargura = retanguloLargura;
 		this.velocidade = velocidade;
 		this.direcao = direcao;
 		this.xPosicao = xPosicao;
-		this.yPosicao = yPosicao;		
+		this.yPosicao = yPosicao;
+		this.cor = cor;
 	}
 	
 	public Carro(){
@@ -22,8 +24,7 @@ public class Carro {
 	}
 	
 	public void desenhar(Tela tela) {
-		Cor cor = new Cor("azul");
-		tela.retangulo(this.xPosicao, this.yPosicao, this.retanguloLargura, this.retanguloAltura, cor);
+		tela.retangulo(this.xPosicao, this.yPosicao, this.retanguloLargura, this.retanguloAltura, this.cor);
 	}
 	
 	public void mover(double dt){
