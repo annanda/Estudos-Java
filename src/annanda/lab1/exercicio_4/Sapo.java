@@ -52,6 +52,7 @@ public class Sapo {
 	public void mover(double dt){
 		if((int)this.yPosicao == (int)this.yFinal && (int)this.xPosicao == (int)this.xFinal) {
 			this.yPosicao = this.yFinal;
+			this.xPosicao = this.xFinal;
 			return;
 		}
 		if(this.direcao.equals("up")){
@@ -65,6 +66,11 @@ public class Sapo {
 		}
 		if(this.direcao.equals("right")){
 			this.xPosicao = this.xPosicao + (VELOCIDADE_SAPO * dt);
+			if(this.xPosicao > Jogo.LARGURA){
+				System.out.println("Sou maior que 800: " + this.xPosicao);
+				this.xFinal = 0 + (int)(this.xFinal - this.xPosicao);
+				this.xPosicao -=  Jogo.LARGURA + (this.raio);
+			}
 		}
 		
 	}
