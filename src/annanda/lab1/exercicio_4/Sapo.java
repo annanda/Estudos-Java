@@ -60,7 +60,12 @@ public class Sapo {
 		if(this.direcao.equals("down")){
 			this.yPosicao = this.yPosicao + (VELOCIDADE_SAPO * dt);
 		}
-		
+		if(this.direcao.equals("left")){
+			this.xPosicao = this.xPosicao - (VELOCIDADE_SAPO * dt);
+		}
+		if(this.direcao.equals("right")){
+			this.xPosicao = this.xPosicao + (VELOCIDADE_SAPO * dt);
+		}
 		
 	}
 	
