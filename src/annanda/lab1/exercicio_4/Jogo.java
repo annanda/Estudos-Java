@@ -97,6 +97,10 @@ public class Jogo {
 	}
 	
 	public void tecla(String tecla) {
+		if(tecla.equals("up") || tecla.equals("down") || tecla.equals("left") || tecla.equals("right")){
+			this.sapo.preparaMover(tecla);			
+			return;
+		}
 	}
 	
 	public static void main(String[] args) {
