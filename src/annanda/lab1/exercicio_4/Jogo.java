@@ -11,14 +11,14 @@ public class Jogo {
 	
 	public static int INTERVALO_ENTRE_CARROS = 25;
 	public static int ALTURA_DOS_CARROS = 75;
-	public static int TAMANHO_RUA = 3 * INTERVALO_ENTRE_CARROS + 4 * ALTURA_DOS_CARROS;
+	public static int TAMANHO_RUA = 3 * INTERVALO_ENTRE_CARROS + 4 * ALTURA_DOS_CARROS + 30;
 	public static int POSICAO_INICIAL_DA_RUA = 105;
 	public static int POSICAO_FINAL_DA_RUA = POSICAO_INICIAL_DA_RUA + TAMANHO_RUA;
 	
 	public Jogo() {	
 		this.carros = new Carro[9];
 		
-		this.sapo = new Sapo(30.0, 7, 400, POSICAO_FINAL_DA_RUA + 30);
+		this.sapo = new Sapo(30.0, 7, 400, POSICAO_FINAL_DA_RUA + ALTURA_DOS_CARROS/2, "up");
 		
 		for(int i = 0; i < carros.length; i++){
 			carros[i] = new Carro();
@@ -78,7 +78,7 @@ public class Jogo {
 	
 	public void desenhar(Tela tela) {
 		Cor corBranca = new Cor("branco");
-		tela.retangulo(0, 30, 800, 75, corBranca);
+		tela.retangulo(0, 15, 800, 75, corBranca);
 		tela.retangulo(0, POSICAO_FINAL_DA_RUA, 800, 75, corBranca);
 		
 		this.sapo.desenhar(tela);
@@ -94,6 +94,8 @@ public class Jogo {
 		for(Carro carro : this.carros){
 			carro.mover(dt);
 		}
+		this.sapo.mover(dt);
+
 	}
 	
 	public void tecla(String tecla) {

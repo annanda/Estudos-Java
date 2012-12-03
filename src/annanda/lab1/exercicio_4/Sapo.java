@@ -5,12 +5,20 @@ public class Sapo {
 	public int vidas;
 	public double xPosicao;
 	public double yPosicao;
+	public double xFinal;
+	public double yFinal;
+	public String direcao;
+	public static double PULO_SAPO = 100;
+	public static double VELOCIDADE_SAPO = 300;
 	
-	public Sapo(double raio, int vidas, double xPosicao, double yPosicao){
+	public Sapo(double raio, int vidas, double xPosicao, double yPosicao, String direcao){
 		this.raio = raio;
 		this.vidas = vidas;
 		this.xPosicao = xPosicao;
 		this.yPosicao = yPosicao;		
+		this.direcao = direcao;
+		this.xFinal = xPosicao;
+		this.yFinal = yPosicao;
 	}
 	
 	public Sapo(){
@@ -25,7 +33,34 @@ public class Sapo {
 	
 	
 	public void preparaMover(String direcao){
-		System.out.println("Estou me movendo para " + direcao);
+		if(direcao.equals("up")){
+			this.yFinal = yPosicao - PULO_SAPO;
+		}
+		if(direcao.equals("down")){
+			this.yFinal = yPosicao + PULO_SAPO;
+		}
+		if(direcao.equals("left")){
+			this.xFinal = xPosicao - PULO_SAPO;
+		}
+		if(direcao.equals("right")){
+			this.xFinal = xPosicao + PULO_SAPO;
+		}
+		this.direcao = direcao;
+		System.out.println("Estou me movendo: (" + this.xPosicao + " | " + this.yPosicao + ") -> (" + this.xFinal + " | " + this.yFinal + ") - direcao: " + this.direcao);
+	}
+	
+	public void mover(double dt){
+		if((int)this.yPosicao == (int)this.yFinal && (int)this.xPosicao == (int)this.xFinal) {
+			this.yPosicao = this.yFinal;
+			return;
+		}
+		if(this.direcao.equals("up")){
+			this.yPosicao = this.yPosicao - (VELOCIDADE_SAPO * dt);
+		}
+		if(this.direcao.equals("down")){
+			this.yPosicao = this.yPosicao + (VELOCIDADE_SAPO * dt);
+		}
+		
 		
 	}
 	
