@@ -44,9 +44,9 @@ public class Pessoa{
 	}
 	
 	public void imprimeAmigos(){
-		for(int i = 0; i < this.amigos.length; i++){
-			if(this.amigos[i] != null){
-				System.out.println("Amigo " + (i+1) + ": " + this.amigos[i].getNome());
+		for(Pessoa amigo: this.amigos){
+			if(amigo != null){
+				System.out.println("Amigo: " + amigo.getNome());
 			}			
 		}
 	}	
