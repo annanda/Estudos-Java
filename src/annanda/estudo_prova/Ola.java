@@ -1,6 +1,7 @@
 package annanda.estudo_prova;
 
 import annanda.estudo_prova.uteis.Pessoa;
+import annanda.estudo_prova.uteis.Homem;
 
 public class Ola {
 	
@@ -8,27 +9,30 @@ public class Ola {
 	
 	 public static void main(String[] argv){ //qualquer método estático só pode chamar ou trabalhar com variáveis e métodos estáticos
 		 System.out.println("Olá, universo: " + NOME_UNIVERSO);
-		 Pessoa pessoa = new Pessoa("Bobona");
-		 pessoa.setNome("Annanda");
-		 System.out.println("Olá, " + pessoa.getNome());
+		 Pessoa annanda = new Pessoa("Gatona", "feminino");
+		 annanda.setNome("Annanda");
+		 System.out.println("Olá, " + annanda.getNome() + ", " + annanda.getSexo());
 		 
-		 Pessoa outraPessoa = new Pessoa("Felipe");
+		 Homem felipe = new Homem("Felipe");
 		 
-		 if(pessoa.getNome().equals( outraPessoa.getNome())){
+		 if(annanda.getNome().equals( felipe.getNome())){
 			 System.out.println("São clones!");
 		 }
 		 else {
 			 System.out.println("Não não clones");	
 		 }
-		 pessoa.setCompanheiro(outraPessoa);
-		 System.out.println(pessoa.getNome() + " é companheira de " + pessoa.getCompanheiro().getNome());
+		 annanda.setCompanheiro(felipe);
+		 System.out.println(annanda.getNome() + " é companheira de " + annanda.getCompanheiro().getNome());
 		 
 		 Pessoa maisOutraPessoa = new Pessoa("Ivna");
 		 Pessoa[] amigos = new Pessoa[1];
 		 amigos[0] = maisOutraPessoa;
-		 pessoa.setAmigos(amigos);
+		 annanda.setAmigos(amigos);
 		 
-		 pessoa.imprimeAmigos();		 
-		 outraPessoa.imprimeAmigos();
+		 annanda.imprimeAmigos();		 
+		 felipe.imprimeAmigos();
+		
+		 
+		 
 	 }	
 }

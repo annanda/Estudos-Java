@@ -1,9 +1,10 @@
 package annanda.estudo_prova.uteis;
 
 public class Pessoa{
-	private String nome;
-	private Pessoa companheiro;
-	private Pessoa[] amigos;
+	protected String nome;
+	protected Pessoa companheiro;
+	protected Pessoa[] amigos;
+	protected String sexo;
 	
 	
 	public Pessoa(){
@@ -14,7 +15,12 @@ public class Pessoa{
 	public Pessoa(String nome){
 		this(); //para chamar o construtor padrao
 		this.nome = nome;
-	}	
+	}
+	
+	public Pessoa(String nome, String sexo){
+		this(nome);
+		this.sexo = sexo;
+	}
 	
 	//=============== GETs e SETs ===================================
 	
@@ -41,6 +47,15 @@ public class Pessoa{
 	
 	public void setAmigos(Pessoa[] amigos){
 		this.amigos = amigos;
+	}
+	
+	
+	public String getSexo(){
+		return this.sexo;
+	}
+	
+	public void setSexo(String sexo){
+		this.sexo = sexo;
 	}
 	
 	public void imprimeAmigos(){
