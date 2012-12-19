@@ -1,4 +1,4 @@
-package annanda.estudo_prova;
+package annanda.estudo_prova.uteis;
 
 public class Pessoa{
 	private String nome;

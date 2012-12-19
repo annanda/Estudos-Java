@@ -1,5 +1,7 @@
 package annanda.estudo_prova;
 
+import annanda.estudo_prova.uteis.Pessoa;
+
 public class Ola {
 	
 	static final String NOME_UNIVERSO = "Diversão";
@@ -8,6 +10,16 @@ public class Ola {
 		 System.out.println("Olá, universo: " + NOME_UNIVERSO);
 		 Pessoa pessoa = new Pessoa("Bobona");
 		 pessoa.setNome("Annanda");
-		 System.out.println("Olá, " + pessoa.getNome());	 
+		 System.out.println("Olá, " + pessoa.getNome());
+		 
+//		 Pessoa outraPessoa = new Pessoa("Annanda");
+		 Pessoa outraPessoa = new Pessoa(new String("Annanda"));
+		 
+		 if(pessoa.getNome().equals( outraPessoa.getNome())){
+			 System.out.println("São clones!");
+		 }
+		 else
+			 System.out.println("Não não clones");
+		 
 	 }	
 }
