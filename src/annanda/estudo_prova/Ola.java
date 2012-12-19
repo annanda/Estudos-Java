@@ -12,14 +12,23 @@ public class Ola {
 		 pessoa.setNome("Annanda");
 		 System.out.println("Olá, " + pessoa.getNome());
 		 
-//		 Pessoa outraPessoa = new Pessoa("Annanda");
-		 Pessoa outraPessoa = new Pessoa(new String("Annanda"));
+		 Pessoa outraPessoa = new Pessoa("Felipe");
 		 
 		 if(pessoa.getNome().equals( outraPessoa.getNome())){
 			 System.out.println("São clones!");
 		 }
-		 else
-			 System.out.println("Não não clones");
+		 else {
+			 System.out.println("Não não clones");	
+		 }
+		 pessoa.setCompanheiro(outraPessoa);
+		 System.out.println(pessoa.getNome() + " é companheira de " + pessoa.getCompanheiro().getNome());
 		 
+		 Pessoa maisOutraPessoa = new Pessoa("Ivna");
+		 Pessoa[] amigos = new Pessoa[1];
+		 amigos[0] = maisOutraPessoa;
+		 pessoa.setAmigos(amigos);
+		 
+		 pessoa.imprimeAmigos();		 
+		 outraPessoa.imprimeAmigos();
 	 }	
 }

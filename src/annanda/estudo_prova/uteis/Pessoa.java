@@ -2,14 +2,22 @@ package annanda.estudo_prova.uteis;
 
 public class Pessoa{
 	private String nome;
+	private Pessoa companheiro;
+	private Pessoa[] amigos;
 	
-	//se chama sobrecarga de método
+	
 	public Pessoa(){
 		this.nome = "Joao Ninguem";
+		this.amigos = new Pessoa[10];
 	}
+	//se chama sobrecarga de método
 	public Pessoa(String nome){
+		this(); //para chamar o construtor padrao
 		this.nome = nome;
-	}
+	}	
+	
+	//=============== GETs e SETs ===================================
+	
 	public String getNome(){
 		return this.nome;
 	}
@@ -18,4 +26,28 @@ public class Pessoa{
 		this.nome = nome;		
 		System.out.println("Depois: " + this.nome);
 	}
+	
+	public Pessoa getCompanheiro(){
+		return this.companheiro;		
+	}
+	
+	public void setCompanheiro(Pessoa companheiro){
+		this.companheiro = companheiro;
+	}
+	
+	public Pessoa[] getAmigos(){
+		return this.amigos;
+	}
+	
+	public void setAmigos(Pessoa[] amigos){
+		this.amigos = amigos;
+	}
+	
+	public void imprimeAmigos(){
+		for(int i = 0; i < this.amigos.length; i++){
+			if(this.amigos[i] != null){
+				System.out.println("Amigo " + (i+1) + ": " + this.amigos[i].getNome());
+			}			
+		}
+	}	
 }
